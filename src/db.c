@@ -47,7 +47,7 @@ typedef enum {
     KEY_TRIMMED  /* Logically trimmed but not yet deleted. */
 } keyStatus;
 
-static keyStatus expireIfNeeded(redisDb *db, robj *key, kvobj *kv, int flags);
+static keyStatus expireIfNeeded(redisDatabase *database, redisObject *key, keyValueObject *keyValue, int flags);
 
 /* Update LFU when an object is accessed.
  * Firstly, decrement the counter if the decrement time is reached.
